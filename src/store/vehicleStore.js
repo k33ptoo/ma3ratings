@@ -14,7 +14,6 @@ export const vehicleStore = defineStore("vehicleStore", {
             try {
                 const response = await axios.get("/vehicles");
                 this.vehicles = response.data;
-                console.log(this.vehicles);
             } catch (error) {
                 this.error = error;
             } finally {

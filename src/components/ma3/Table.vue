@@ -1,6 +1,6 @@
 <template>
   <table-loader :loading="loading" />
-  <div v-if="!loading" class="overflow-x-sauto w-full max-w-[1200px]">
+  <div v-if="!loading" class="overflow-x-auto w-full max-w-[1200px]">
     <div class="inline-block py-2 w-full">
       <div class="overflow-hidden">
         <table class="min-w-full table-auto md:table-fixed">
@@ -28,13 +28,19 @@
                 scope="col">
                 Driver
               </th>
+              
+              <th class="hidden md:table-cell py-3 md:px-6 px-2 text-sm font-bold tracking-wider text-left uppercase text-gray-400" scope="col">
+                User
+              </th>
+              <th
+                class="hidden md:table-cell py-3 md:px-6 px-2 text-sm font-bold tracking-wider text-left uppercase text-gray-400"
+                scope="col">
+                Comment
+              </th>
               <th
                 class="hidden md:table-cell py-3 md:px-6 px-2 text-sm font-bold tracking-wider text-left uppercase text-gray-400"
                 scope="col">
                 Date
-              </th>
-              <th class="hidden md:table-cell py-3 md:px-6 px-2 text-sm font-bold tracking-wider text-left uppercase text-gray-400" scope="col">
-                User
               </th>
             </tr>
           </thead>

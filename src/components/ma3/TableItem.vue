@@ -12,16 +12,18 @@
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       <star-rating :star-size="20" v-model:rating="vehicle.rating" :read-only="true" :rounded-corners="true" />
     </td>
-    <td class="hiddenmd:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
+    <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.driver_name }}
     </td>
-    <td class="hiddenmd:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
-      {{ vehicle.date_created }}
+    <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
+      {{ vehicle.user_name }}
+    </td> 
+    <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
+      {{ vehicle.comment }}
     </td>
     <td class="hidden md:table-cell rounded-r-lg py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
-      {{ vehicle.user_name }}
+      {{ vehicle.date_created }}
     </td>
-    
   </tr>
 </template>
 

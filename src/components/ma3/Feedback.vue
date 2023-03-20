@@ -13,10 +13,17 @@
                         leave-to="opacity-0 scale-95">
                         <DialogPanel
                             class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                            <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-                                Please enter your feedback
+                            <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900 flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-5 h-5">
+                                    <path fill-rule="evenodd"
+                                        d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Please enter your feedback</span>
                             </DialogTitle>
-                            <div class="mt-2">
+                            <div class="mt-2 ">
+
                                 <p class="text-sm text-gray-500">
                                     This will help passengers and drivers to make informed decisions and saccos improve
                                     their service.
@@ -26,8 +33,10 @@
                                 <div class="flex gap-2">
                                     <div>
                                         <label class="label">Sacco:</label>
-                                        <Combobox  v-model="sacco">
-                                            <ComboboxInput aria-placeholder="Sacco" class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2" @change="query = $event.target.value" />
+                                        <Combobox v-model="sacco">
+                                            <ComboboxInput aria-placeholder="Sacco"
+                                                class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2"
+                                                @change="query===''? sacco = $event.target.value : query= $event.target.value" />
                                             <ComboboxOptions class="absolute bg-gray-50 p-2 rounded-b-lg">
                                                 <ComboboxOption v-for="vehicle in filteredVehicles" :key="vehicle.id"
                                                     :value="vehicle.sacco">
@@ -38,8 +47,10 @@
                                     </div>
                                     <div>
                                         <label class="label">Plate Number:</label>
-                                        <Combobox  v-model="plate_number">
-                                            <ComboboxInput class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2" @change="query = $event.target.value" />
+                                        <Combobox v-model="plate_number">
+                                            <ComboboxInput
+                                                class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2"
+                                                @change="query===''? plate_number = $event.target.value : query= $event.target.value" />
                                             <ComboboxOptions class="absolute bg-gray-50 p-2 rounded-b-lg">
                                                 <ComboboxOption v-for="vehicle in filteredVehicles" :key="vehicle.id"
                                                     :value="vehicle.plate_number">
@@ -137,6 +148,7 @@ export default {
 
         const selectedPlate = ref(vehicles[0])
         const query = ref('')
+        
 
         return {
             isOpen,
@@ -165,7 +177,7 @@ export default {
             user_name: '',
             comment: '',
             rating: 3,
-            date_created: new Date().toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "numeric" })
+            date_created: new Date().toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "numeric" })
         }
     },
 
