@@ -1,6 +1,6 @@
 <template>
   <tr class="odd:bg-slate-200 odd:opacity-90 rounded-lg">
-    <td class="hiddenmd:table-cell rounded-lg py-4 md:px-6 px-2 text-sm font-medium  text-gray-400">
+    <td class="hiddenmd:table-cell rounded-l-lg py-4 md:px-6 px-2 text-sm font-medium  text-gray-400">
       {{ vehicle.id }}
     </td>
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
@@ -18,7 +18,7 @@
     <td class="hiddenmd:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.date_created }}
     </td>
-    <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
+    <td class="hidden md:table-cell rounded-r-lg py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.user_name }}
     </td>
     

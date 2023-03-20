@@ -26,13 +26,27 @@
                                 <div class="flex gap-2">
                                     <div>
                                         <label class="label">Sacco:</label>
-                                        <input v-model="sacco" type="text" placeholder="Sacco"
-                                            class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2" />
+                                        <Combobox  v-model="sacco">
+                                            <ComboboxInput aria-placeholder="Sacco" class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2" @change="query = $event.target.value" />
+                                            <ComboboxOptions class="absolute bg-gray-50 p-2 rounded-b-lg">
+                                                <ComboboxOption v-for="vehicle in filteredVehicles" :key="vehicle.id"
+                                                    :value="vehicle.sacco">
+                                                    {{ vehicle.sacco }}
+                                                </ComboboxOption>
+                                            </ComboboxOptions>
+                                        </Combobox>
                                     </div>
                                     <div>
                                         <label class="label">Plate Number:</label>
-                                        <input v-model="plate_number" type="text" maxlength="7" placeholder="Plate Number"
-                                            class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2" />
+                                        <Combobox  v-model="plate_number">
+                                            <ComboboxInput class="w-full border uppercase placeholder:normal-case border-gray-300 rounded-md p-2" @change="query = $event.target.value" />
+                                            <ComboboxOptions class="absolute bg-gray-50 p-2 rounded-b-lg">
+                                                <ComboboxOption v-for="vehicle in filteredVehicles" :key="vehicle.id"
+                                                    :value="vehicle.plate_number">
+                                                    {{ vehicle.plate_number }}
+                                                </ComboboxOption>
+                                            </ComboboxOptions>
+                                        </Combobox>
                                     </div>
                                 </div>
 
@@ -88,6 +102,10 @@ import {
     Dialog,
     DialogPanel,
     DialogTitle,
+    Combobox,
+    ComboboxInput,
+    ComboboxOptions,
+    ComboboxOption,
 } from '@headlessui/vue'
 import router from '../../router';
 
@@ -98,8 +116,13 @@ export default {
         Dialog,
         DialogPanel,
         DialogTitle,
+        Combobox,
+        ComboboxInput,
+        ComboboxOptions,
+        ComboboxOption,
         StarRating
     },
+
     setup() {
         const vehicleS = vehicleStore()
         const isOpen = ref(true)
@@ -110,12 +133,27 @@ export default {
         const openModal = () => {
             isOpen.value = true
         }
+        const vehicles = vehicleS.vehicles
+
+        const selectedPlate = ref(vehicles[0])
+        const query = ref('')
 
         return {
             isOpen,
             closeModal,
             openModal,
-            vehicleS
+            vehicleS,
+            vehicles,
+            selectedPlate,
+            query
+        }
+    },
+
+    computed: {
+        filteredVehicles() {
+            return this.vehicles.filter((vehicle) => {
+                return vehicle.plate_number.toLowerCase().includes(this.query.toLowerCase())
+            })
         }
     },
 
@@ -127,7 +165,7 @@ export default {
             user_name: '',
             comment: '',
             rating: 3,
-            date_created : new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric", hour:"numeric", minute:"numeric"}) 
+            date_created: new Date().toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "numeric" })
         }
     },
 
@@ -140,7 +178,7 @@ export default {
                 user_name: this.user_name,
                 comment: this.comment,
                 rating: this.rating,
-                date_created : this.date_created
+                date_created: this.date_created
             }
             if (this.plate_number == '' || this.sacco == '' || this.user_name == '' || this.comment == '' || this.rating == 0) {
                 alert('Please fill all fields')
