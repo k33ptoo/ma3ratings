@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-field {
+    @apply w-full h-10 border border-gray-300 rounded-lg px-4;
+}
+.label {
+    @apply block text-sm font-medium text-gray-700;
+}
