@@ -1,5 +1,5 @@
 <template>
-  <tr class="odd:bg-slate-200 odd:opacity-90 rounded-lg">
+  <tr v-for="(vehicle, i) in vehicles.slice(0, visiblerows)" :key="i" @click="doClick" class="odd:bg-slate-300 odd:opacity-90 rounded-lg">
     <td class="hiddenmd:table-cell rounded-l-lg py-4 md:px-6 px-2 text-sm font-medium  text-gray-400">
       {{ vehicle.id }}
     </td>
@@ -7,7 +7,7 @@
       {{ vehicle.sacco }}
     </td>
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
-      {{ vehicle.plate_number }}
+      {{ vehicle.plate_number + " " }}  
     </td>
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       <star-rating :star-size="20" v-model:rating="vehicle.rating" :read-only="true" :rounded-corners="true" />
@@ -17,7 +17,7 @@
     </td>
     <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.user_name }}
-    </td> 
+    </td>
     <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.comment }}
     </td>
@@ -25,6 +25,7 @@
       {{ vehicle.date_created }}
     </td>
   </tr>
+
 </template>
 
 <script>
@@ -37,9 +38,10 @@ export default {
     StarRating
   },
   props: {
-    vehicle: {},
+    vehicles: [],
+    visiblerows: 10,
   },
- 
+
   // watch: {
   //   vehicle: {
   //     handler: function (newval, oldVal) {
@@ -57,7 +59,13 @@ export default {
   //   tl.fromTo(this.$el, { opacity: 0 }, {  opacity: 1, ease: "power1.inOut", stagger: 0.2 });
   // },
 
-  
+
+  methods: {
+    doClick() {
+      this.$emit("doClick", this.vehicle.id);
+    },
+  },
+
 }
 </script>
 

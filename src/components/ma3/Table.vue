@@ -45,7 +45,7 @@
             </tr>
           </thead>
           <tbody>
-            <table-item class="rounded-xl border-1" v-for="(vehicle, i) in vehicles.slice(0, visiblerows)" :key="i" :vehicle="vehicle"
+            <table-item @doClick="onItemClicked($event)" :vehicles="vehicles" :visiblerows="visiblerows" class="rounded-xl border-1" 
                />
           </tbody>
         </table>
@@ -73,7 +73,7 @@ export default {
     return {
       loading: true,
       vehicles: [],
-      visiblerows: 10
+      visiblerows: 10,
     }
   },
   mounted() {
@@ -89,6 +89,11 @@ export default {
     async getVehicles() {
       await this.vStore.getVehicles()
       this.vehicles = this.vStore.vehicles;
+    },
+    onItemClicked(id) {
+      if(this.vehicles.filter((vehicle) => vehicle.id !== id))
+      {
+      }
     }
 
   },
