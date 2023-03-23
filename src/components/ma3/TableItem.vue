@@ -1,6 +1,6 @@
 <template>
   <tr v-for="(vehicle, i) in vehicles.slice(0, visiblerows)" :key="i" @click="doClick" class="odd:bg-slate-300 odd:opacity-90 rounded-lg">
-    <td class="hiddenmd:table-cell rounded-l-lg py-4 md:px-6 px-2 text-sm font-medium  text-gray-400">
+    <td class="hidden md:table-cell rounded-l-lg py-4 md:px-6 px-2 text-sm font-medium  text-gray-400">
       {{ vehicle.id }}
     </td>
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
@@ -62,7 +62,7 @@ export default {
 
   methods: {
     doClick() {
-      
+
     },
   },
 
