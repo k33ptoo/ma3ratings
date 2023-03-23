@@ -1,20 +1,20 @@
 
 <template>
   <feedback v-if="view === 'new'" />
-  <div class="bg-slate-200 w-screen h-screen">
-    <div class="w-full justify-center flex">
-      <home />
-    </div>
-  </div>
+  <home />
+  <ma3 />
 </template>
 <script >
 import Home from './components/home/Home.vue'
 import Feedback from './components/ma3/Feedback.vue';
+import Ma3 from './components/ma3/Ma3.vue';
 
 export default {
   components: {
     Home,
     Feedback
+    ,
+    Ma3
   },
   setup() {
   },

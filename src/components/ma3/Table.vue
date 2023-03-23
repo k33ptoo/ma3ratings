@@ -16,7 +16,7 @@
               </th>
               <th class="table-cell py-3 md:px-6 px-2 text-sm font-bold tracking-wider text-left uppercase text-gray-400"
                 scope="col">
-                Plate Number
+                Plate No.
               </th>
               <th
                 class="table-cell py-3 md:px-6 px-2 text-sm font-bold tracking-wider text-left uppercase text-gray-400"

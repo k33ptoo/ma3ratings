@@ -6,8 +6,8 @@
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.sacco }}
     </td>
-    <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
-      {{ vehicle.plate_number + " " }}  
+    <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
+      {{ vehicle.plate_number  }}  
     </td>
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       <star-rating :star-size="20" v-model:rating="vehicle.rating" :read-only="true" :rounded-corners="true" />
@@ -62,7 +62,7 @@ export default {
 
   methods: {
     doClick() {
-      this.$emit("doClick", this.vehicle.id);
+      
     },
   },
 
