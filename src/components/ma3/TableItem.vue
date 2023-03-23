@@ -6,7 +6,7 @@
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.sacco }}
     </td>
-    <td class="hidden md:table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
+    <td class="table-cell py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
       {{ vehicle.plate_number  }}  
     </td>
     <td class="py-4 md:px-6 px-2 text-sm font-medium text-gray-400">
