@@ -7,7 +7,7 @@
 
 #header {
     font-family: 'NT Fabulous', sans-serif;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 body {
@@ -18,5 +18,5 @@ body {
     @apply w-full h-10 border border-gray-300 rounded-lg px-4;
 }
 .label {
-    @apply block text-sm font-medium text-gray-700;
+    @apply block text-sm font-medium text-gray-700 pb-1;
 }
