@@ -1,4 +1,3 @@
-
 import {createRouter,createWebHistory} from 'vue-router';
 
 const routes = [
@@ -7,7 +6,6 @@ const routes = [
         name: 'Home',
         component: () => import('./components/home/Home.vue')
     },
-    
 ]
 
 const router = createRouter({

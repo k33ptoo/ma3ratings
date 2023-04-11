@@ -1,4 +1,3 @@
-
 <template>
   <feedback v-if="view === 'new'" />
   <home />
