@@ -1,11 +1,17 @@
-
 <template>
-  <div class="bg-blue-500 w-full md:h-[600px] p-8 md:p-0 items-center justify-center flex flex-col">
+  <div class="bg-gradient-to-r from-blue-500 to-blue-600 w-full md:h-[600px] p-8 md:p-0 items-center justify-center flex flex-col">
     <div class="w-full flex max-w-[1200px] h-full md:items-center ">
       <div class="flex-col flex  gap-2">
-        <span class="md:text-5xl text-3xl text-white py-2">Welcome to Ma3Ratings</span>
-        <span class="md:text-lg text-gray-200 py-2 md:w-96">Help others make a better travel decisions by giving feedback on your
-          experience</span>
+        <div id="header">
+          <router-link to="/" >
+            <span class="md:text-5xl text-3xl text-white py-2">
+            Welcome to Ma3Ratings</span>
+          </router-link>
+        </div>
+        <span class="md:text-lg text-gray-50 py-2 pb-3 md:w-96 font-light">
+            At <b>Ma3Ratings</b>, we believe every ride matters. Help others make better travel decisions by giving feedback on your
+            public travel experiences.
+        </span>
         <router-link to="/?view=new"
           class="bg-[#21D19F] flex hover:bg-opacity-80 gap-2 justify-center text-white font-bold py-2 px-4 text-center md:w-60 rounded-full">
           Rate a Ma3
@@ -17,8 +23,6 @@
 
         </router-link>
       </div>
-      
-
     </div>
     <div
         class="hidden md:block overflow-hidden bg-blue-50 rounded-l-full absolute h-96 w-2/4 top-24 right-0 lg:-bottom-28 lg:-right-30">
