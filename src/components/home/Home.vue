@@ -32,8 +32,7 @@
 </template>
 
 <script>
-import Ma3 from '../ma3/Ma3.vue'
-
+s
 import { gsap } from 'gsap'
 import { SteppedEase } from 'gsap/all'
 import { TextPlugin } from 'gsap/TextPlugin'
@@ -43,7 +42,7 @@ import travel from '../../assets/travel.json'
 
 export default {
   name: 'Home',
-  components: { Ma3, Vue3Lottie },
+  components: { Vue3Lottie },
   setup() {
     return {
       travel

@@ -33,7 +33,7 @@
                             </div>
                             <div class="mt-2 space-y-4">
                                 <div class="flex gap-2">
-                                    <div>
+                                    <div class="w-full">
                                         <label class="label">SACCO:</label>
                                         <Combobox v-model="sacco">
                                             <ComboboxInput aria-placeholder="Sacco"
@@ -47,7 +47,7 @@
                                             </ComboboxOptions>
                                         </Combobox>
                                     </div>
-                                    <div>
+                                    <div class="w-full">
                                         <label class="label">Plate Number:</label>
                                         <Combobox v-model="plate_number">
                                             <ComboboxInput
@@ -63,13 +63,13 @@
                                     </div>
                                 </div>
 
-                                <div class="flex gap-2">
-                                    <div> 
+                                <div class="flex gap-2 justify-between">
+                                    <div class="w-full"> 
                                         <label class="label">Driver's Name:</label>
                                         <input v-model="driver_name" type="text" placeholder="Driver's name"
                                             class="w-full border border-gray-300 rounded-md p-2" />
                                     </div>
-                                    <div>
+                                    <div class="w-full">
                                         <label class="label">Your Name:</label>
                                         <input v-model="user_name" type="text" placeholder="Your name"
                                             class="w-full border border-gray-300 rounded-md p-2" />

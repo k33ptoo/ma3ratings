@@ -1,19 +1,19 @@
 <template>
   <feedback v-if="view === 'new'" />
   <home />
-  <ma3 />
+  <ma3-tabs/>
 </template>
 <script >
 import Home from './components/home/Home.vue'
 import Feedback from './components/ma3/Feedback.vue';
-import Ma3 from './components/ma3/Ma3.vue';
+import Ma3Tabs from './components/ma3/Ma3Tabs.vue';
 
 export default {
   components: {
     Home,
     Feedback
     ,
-    Ma3
+    Ma3Tabs
   },
   setup() {
   },
