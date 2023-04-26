@@ -32,7 +32,6 @@
 </template>
 
 <script>
-s
 import { gsap } from 'gsap'
 import { SteppedEase } from 'gsap/all'
 import { TextPlugin } from 'gsap/TextPlugin'
